@@ -3,8 +3,7 @@ import Header from "./components/header/Header";
 import KanbanBoard from "./components/kanbanboard/KanbanBoard";
 import { getTicketsAndUsers } from "./api/ticketsAndUsers";
 import { useDispatch } from "react-redux";
-import { SetAllTicket } from "./redux/reducer/ticketReducer";
-
+import { SetTicketsAndUsers } from "./redux/reducer/ticketReducer";
 function App() {
   const dispatch = useDispatch();
 
@@ -13,7 +12,7 @@ function App() {
       try {
         const res = await getTicketsAndUsers();
         console.log(res);
-        dispatch(SetAllTicket(res.data));
+        dispatch(SetTicketsAndUsers(res.data));
       } catch (error) {
         console.error(error);
       } finally {

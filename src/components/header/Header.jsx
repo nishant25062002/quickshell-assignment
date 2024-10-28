@@ -18,7 +18,8 @@ const Header = () => {
         <div className="HeaderText">Display</div>
         <img src={DownIcon} alt="icon" />
       </div>
-      {showDialog && <DisplayDialog />}
+
+      {showDialog && <DisplayDialog setShowDialog={setShowDialog} />}
     </div>
   );
 };

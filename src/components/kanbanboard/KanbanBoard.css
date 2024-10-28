@@ -21,6 +21,12 @@
   width: 100%;
 }
 
+.ColumnTicket {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .HeaderDetails {
   display: flex;
   gap: 18px;
@@ -30,6 +36,10 @@
   width: 22px;
   height: 22px;
   border-radius: 99px;
+}
+
+.ColumnLength {
+  color: #909090;
 }
 
 .HeaderIcons {
@@ -55,6 +65,7 @@
   align-items: center;
   justify-content: space-between;
   color: #565656;
+  font-size: 14px;
 }
 
 .CardTop > img {
@@ -65,8 +76,15 @@
 
 .CardDetails {
   display: flex;
+  align-items: self-start;
   gap: 4px;
   max-width: 80%;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.CardDetails > img {
+  padding-top: 2px;
 }
 
 .CardBottom {

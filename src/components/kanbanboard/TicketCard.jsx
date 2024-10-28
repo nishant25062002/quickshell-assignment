@@ -13,7 +13,7 @@ const TicketCard = () => {
         />
       </div>
       <div className="CardDetails">
-        <img src={BackLogIcon} alt="" />
+        <img src={BackLogIcon} alt="icon" />
         <div>Create Onboarding Tutorial For New Users</div>
       </div>
       <div className="CardBottom">
