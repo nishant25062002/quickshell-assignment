@@ -1,0 +1,95 @@
+.Body {
+  padding: 40px 45px;
+  display: flex;
+  overflow-x: scroll;
+  gap: 50px;
+  min-height: calc(100vh - 80px);
+}
+
+.Column {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  max-width: 390px;
+  min-width: 390px;
+}
+
+.ColumnHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.HeaderDetails {
+  display: flex;
+  gap: 18px;
+}
+
+.HeaderDetails > img {
+  width: 22px;
+  height: 22px;
+  border-radius: 99px;
+}
+
+.HeaderIcons {
+  display: flex;
+  gap: 10px;
+}
+
+.TicketCard {
+  height: fit-content;
+  background-color: #fff;
+  width: calc(100%-36px);
+  padding: 10px 18px;
+  border-radius: 6px;
+  border: 1.5px solid #ededed;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.CardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #565656;
+}
+
+.CardTop > img {
+  width: 22px;
+  height: 22px;
+  border-radius: 99px;
+}
+
+.CardDetails {
+  display: flex;
+  gap: 4px;
+  max-width: 80%;
+}
+
+.CardBottom {
+  padding-top: 7px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.Dot {
+  width: 10px;
+  height: 10px;
+  background-color: #b9b9b9;
+  border-radius: 99px;
+}
+
+.BorderDiv {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  border: 1px solid #e7e7e7;
+  padding: 3px 6px;
+  border-radius: 4px;
+  color: #565656;
+  font-size: 12px;
+}
