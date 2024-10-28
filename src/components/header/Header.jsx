@@ -5,7 +5,7 @@ import DownIcon from "../../assets/down.svg";
 import DisplayDialog from "../dialogs/DisplayDialog";
 
 const Header = () => {
-  const [showDialog, setShowDialog] = useState(false);
+  const [showDialog, setShowDialog] = useState(true);
 
   const onClickDialog = () => {
     setShowDialog(!showDialog);
@@ -13,9 +13,9 @@ const Header = () => {
 
   return (
     <div className="Header">
-      <div className="filterDropdown" onClick={onClickDialog}>
+      <div className="FilterDropdown" onClick={onClickDialog}>
         <img src={FilterIcon} alt="icon" />
-        <div className="headerText">Display</div>
+        <div className="HeaderText">Display</div>
         <img src={DownIcon} alt="icon" />
       </div>
       {showDialog && <DisplayDialog />}

@@ -5,9 +5,10 @@
   height: 65px;
   width: calc(100%-80px);
   background-color: #fff;
+  position: relative;
 }
 
-.filterDropdown {
+.FilterDropdown {
   padding: 3px 6px 3px 8px;
   display: flex;
   align-items: center;
@@ -19,6 +20,6 @@
   font-weight: 500;
 }
 
-.headerText {
+.HeaderText {
   padding-left: 3px;
 }
