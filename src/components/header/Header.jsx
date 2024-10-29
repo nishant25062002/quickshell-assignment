@@ -5,7 +5,7 @@ import DownIcon from "../../assets/down.svg";
 import DisplayDialog from "../dialogs/DisplayDialog";
 
 const Header = () => {
-  const [showDialog, setShowDialog] = useState(true);
+  const [showDialog, setShowDialog] = useState(false);
 
   const onClickDialog = () => {
     setShowDialog(!showDialog);

@@ -20,7 +20,6 @@ const Dropdown = ({ title = "Select...", value, options, onSelect }) => {
 
   const handleSelectValue = (option) => {
     onSelect(option.value);
-    console.log(option.value);
     handleClose();
   };
 
@@ -51,7 +50,14 @@ const Dropdown = ({ title = "Select...", value, options, onSelect }) => {
         {isOpen && (
           <div className="DropdownMenu">
             {options.map((option, index) => (
-              <div key={index}>
+              <div
+                key={index}
+                className={
+                  value?.toString() === option.value
+                    ? "ActiveMenu"
+                    : "NotActiveMenu"
+                }
+              >
                 <div
                   onClick={() => handleSelectValue(option)}
                   className="DropdownField"

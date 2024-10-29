@@ -1,0 +1,24 @@
+.ProfileAvatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  color: white;
+  font-size: 10px;
+  font-size: bold;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.ActiveStatus {
+  position: absolute;
+  background-color: rgb(231, 231, 231);
+  width: 8px;
+  height: 8px;
+  border: 2px solid white;
+  border-radius: 99px;
+  right: -3px;
+  top: 70%;
+}

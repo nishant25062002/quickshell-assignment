@@ -9,15 +9,16 @@
 }
 
 .FilterDropdown {
-  padding: 3px 6px 3px 8px;
+  padding: 4px 8px;
   display: flex;
   align-items: center;
   border: 1px solid #dcdcdc;
   border-radius: 4px;
   font-size: 13px;
   gap: 4px;
-  box-shadow: 0 0 0 1.2px #dcdcdc9b;
+  box-shadow: 0.5px 2px 2px 0.5px #d6d6d6;
   font-weight: 500;
+  cursor: pointer;
 }
 
 .HeaderText {

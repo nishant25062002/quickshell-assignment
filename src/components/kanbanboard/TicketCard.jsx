@@ -1,29 +1,32 @@
 import React from "react";
 import BackLogIcon from "../../assets/Backlog.svg";
 import PriorityIcon from "../../assets/Img - High Priority.svg";
+import ProfileAvatar from "../global/Icon/ProfileAvatar";
 
-const TicketCard = () => {
+const TicketCard = ({ id, title, tag }) => {
   return (
     <div className="TicketCard">
       <div className="CardTop">
-        CAM-5
-        <img
-          src="https://avatars.githubusercontent.com/u/80949652?v=4"
-          alt="pic"
-        />
+        {id}
+        <ProfileAvatar title={title} />
       </div>
       <div className="CardDetails">
         <img src={BackLogIcon} alt="icon" />
-        <div>Create Onboarding Tutorial For New Users</div>
+        <div>{title}</div>
       </div>
+
       <div className="CardBottom">
         <div className="BorderDiv">
           <img src={PriorityIcon} alt="pic" />
         </div>
-        <div className="BorderDiv">
-          <div className="Dot" />
-          Feature Request
-        </div>
+
+        {tag?.length > 0 &&
+          tag.map((eachTag, index) => (
+            <div className="BorderDiv" key={index}>
+              <div className="Dot" />
+              <div>{eachTag}</div>
+            </div>
+          ))}
       </div>
     </div>
   );
