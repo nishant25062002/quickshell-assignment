@@ -14,6 +14,7 @@ const DisplayDialog = ({ setShowDialog }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const dispatch = useDispatch();
+
   const grouping = useSelector(filterGrouping);
   const ordering = useSelector(filterOrdering);
 

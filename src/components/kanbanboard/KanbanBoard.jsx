@@ -10,16 +10,14 @@ import {
 } from "../../redux/selector/filterSelector";
 
 const KanbanBoard = () => {
+  const data = useSelector(ticketsAndUsers);
   const grouping = useSelector(filterGrouping);
   const ordering = useSelector(filterOrdering);
-
-  const data = useSelector(ticketsAndUsers);
 
   const [groupedData, setGroupedData] = useState(null);
 
   useEffect(() => {
     const filteredData = groupTickets(grouping, ordering, data);
-    console.log("filteredData", filteredData, ordering, grouping);
     setGroupedData(filteredData);
   }, [ordering, grouping, data]);
 
