@@ -10,14 +10,14 @@ export const groupTickets = (grouping, ordering, data) => {
     } else if (grouping === "status") {
       key = ticket.status;
     } else if (grouping === "users") {
-      key = user ? user.name : "Unknown";
+      key = user ? user.id : "Unknown";
     }
 
     if (!groupedData[key]) {
       groupedData[key] = [];
     }
 
-    groupedData[key].push({ ...ticket, name: user.name });
+    groupedData[key].push({ ...ticket, user });
   });
 
   const groupedArray = Object.keys(groupedData).map((key) => ({
@@ -29,9 +29,9 @@ export const groupTickets = (grouping, ordering, data) => {
     groupedArray.forEach((group) => {
       group.data.sort((a, b) => {
         if (ordering === "title") {
-          return a.title.localeCompare(b.title); // Lexicographical sort by title
+          return a.title.localeCompare(b.title);
         } else {
-          return a[ordering] - b[ordering]; // Numerical sort for other fields
+          return a[ordering] - b[ordering];
         }
       });
     });

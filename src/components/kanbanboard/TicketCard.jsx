@@ -3,12 +3,12 @@ import BackLogIcon from "../../assets/Backlog.svg";
 import PriorityIcon from "../../assets/Img - High Priority.svg";
 import ProfileAvatar from "../global/Icon/ProfileAvatar";
 
-const TicketCard = ({ id, title, tag }) => {
+const TicketCard = ({ id, title, user, tag }) => {
   return (
     <div className="TicketCard">
       <div className="CardTop">
         {id}
-        <ProfileAvatar title={title} />
+        <ProfileAvatar title={user.name} />
       </div>
       <div className="CardDetails">
         <img src={BackLogIcon} alt="icon" />

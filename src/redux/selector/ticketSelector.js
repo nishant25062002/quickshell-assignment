@@ -1,3 +1,3 @@
-export const ticketsAndUsersSelector = (state) => {
+export const ticketsAndUsers = (state) => {
   return state.ticket.ticketsAndUsers;
 };

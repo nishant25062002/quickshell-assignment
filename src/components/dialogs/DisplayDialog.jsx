@@ -28,7 +28,7 @@ const DisplayDialog = ({ setShowDialog }) => {
       options: [
         { label: "Status", value: "status" },
         { label: "Priority", value: "priority" },
-        { label: "User", value: "user" },
+        { label: "User", value: "users" },
       ],
       onSelect: (val) => handleGrouping("grouping", val),
       value: grouping,
