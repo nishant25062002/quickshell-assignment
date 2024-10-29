@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { PRIORITY, STATUS } from "../../utils/cons";
+import { PRIORITY, STATUS } from "../../utils/contants";
 
 const initialState = {
   grouping: STATUS,

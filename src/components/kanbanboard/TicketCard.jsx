@@ -4,7 +4,7 @@ import CustomIcon from "../global/Icon/CustomIcon";
 import { filterGrouping } from "../../redux/selector/filterSelector";
 import { useSelector } from "react-redux";
 import { useDrag } from "react-dnd";
-import { PRIORITY, STATUS } from "../../utils/cons";
+import { PRIORITY, STATUS } from "../../utils/contants";
 
 const TicketCard = ({ ticket }) => {
   const grouping = useSelector(filterGrouping);

@@ -1,4 +1,4 @@
-import { PRIORITY, STATUS, USERS } from "../../utils/cons";
+import { PRIORITY, STATUS, USERS } from "./contants";
 
 export const groupTickets = (grouping, ordering, data) => {
   const groupedData =

@@ -8,7 +8,7 @@ import {
   filterGrouping,
   filterOrdering,
 } from "../../redux/selector/filterSelector";
-import { GroupOptions, OrderOptions } from "../../utils/cons";
+import { GroupOptions, OrderOptions } from "../../utils/contants";
 
 const DisplayDialog = ({ setShowDialog }) => {
   const ref = useRef(null);
@@ -19,7 +19,7 @@ const DisplayDialog = ({ setShowDialog }) => {
   const grouping = useSelector(filterGrouping);
   const ordering = useSelector(filterOrdering);
 
-  const handleGrouping = (type, val) => {
+  const handleFilterVal = (type, val) => {
     const searchParams = new URLSearchParams(location.search);
     searchParams.set(type, val);
     navigate(`/?${searchParams.toString()}`);
@@ -35,13 +35,13 @@ const DisplayDialog = ({ setShowDialog }) => {
     {
       title: "Grouping",
       options: GroupOptions,
-      onSelect: (val) => handleGrouping("grouping", val),
+      onSelect: (val) => handleFilterVal("grouping", val),
       value: grouping,
     },
     {
       title: "Ordering",
       options: OrderOptions,
-      onSelect: (val) => handleGrouping("ordering", val),
+      onSelect: (val) => handleFilterVal("ordering", val),
       value: ordering,
     },
   ];

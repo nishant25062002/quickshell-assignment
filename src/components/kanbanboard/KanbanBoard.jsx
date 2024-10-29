@@ -3,13 +3,13 @@ import "./KanbanBoard.css";
 import KanbanColumn from "./KanbanColumn";
 import { useDispatch, useSelector } from "react-redux";
 import { ticketsAndUsers } from "../../redux/selector/ticketSelector";
-import { groupTickets } from "../functions/filter";
 import {
   filterGrouping,
   filterOrdering,
 } from "../../redux/selector/filterSelector";
 import { SetTicketsAndUsers } from "../../redux/reducer/ticketReducer";
-import { PRIORITY, STATUS, USERS } from "../../utils/cons";
+import { PRIORITY, STATUS, USERS } from "../../utils/contants";
+import { groupTickets } from "../../utils/filter";
 
 const KanbanBoard = () => {
   const dispatch = useDispatch();

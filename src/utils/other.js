@@ -1,4 +1,4 @@
-import { PRIORITY, USERS } from "../../utils/cons";
+import { PRIORITY, USERS } from "./contants";
 
 export const idToName = (title, data, grouping) => {
   if (grouping === PRIORITY) {

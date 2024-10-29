@@ -5,11 +5,11 @@ import TicketCard from "./TicketCard";
 import CustomIcon from "../global/Icon/CustomIcon";
 import ProfileAvatar from "../global/Icon/ProfileAvatar";
 import { useSelector } from "react-redux";
-import { idToName } from "../functions/other";
 import { ticketsAndUsers } from "../../redux/selector/ticketSelector";
 import { filterGrouping } from "../../redux/selector/filterSelector";
 import { useDrop } from "react-dnd";
-import { USERS } from "../../utils/cons";
+import { USERS } from "../../utils/contants";
+import { idToName } from "../../utils/other";
 
 const KanbanColumn = ({ data, title, moveTicket }) => {
   const grouping = useSelector(filterGrouping);

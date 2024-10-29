@@ -4,7 +4,7 @@ import KanbanBoard from "../kanbanboard/KanbanBoard";
 import { useDispatch } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import { SetGrouping, SetOrdering } from "../../redux/reducer/filterReducer";
-import { GroupOptions, OrderOptions } from "../../utils/cons";
+import { GroupOptions, OrderOptions } from "../../utils/contants";
 
 const Home = () => {
   const navigate = useNavigate();
