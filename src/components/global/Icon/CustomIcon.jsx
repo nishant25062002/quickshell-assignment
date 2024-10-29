@@ -14,7 +14,6 @@ import TodoIcon from "../../../assets/To-do.svg";
 export const IconImage = ({ icon }) => <img src={icon} alt="icon" />;
 
 const CustomIcon = ({ title = "" }) => {
-  console.log("icon", title);
   let icon;
 
   if (title?.toLowerCase().includes("4")) {
@@ -39,6 +38,8 @@ const CustomIcon = ({ title = "" }) => {
     icon = InProgressIcon;
   } else if (title?.toLowerCase().includes("canceled")) {
     icon = CancelledIcon;
+  } else if (title?.toLowerCase().includes("urgent")) {
+    icon = UrgentGreyIcon;
   } else {
     icon = NPrioIcon;
   }

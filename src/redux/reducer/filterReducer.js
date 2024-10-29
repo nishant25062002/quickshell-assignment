@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   grouping: "status",
-  ordering: "ordering",
+  ordering: "priority",
 };
 
 const filterSlice = createSlice({

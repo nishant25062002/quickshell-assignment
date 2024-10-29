@@ -22,7 +22,7 @@ const KanbanColumn = ({ data, title }) => {
           {grouping === "users" ? (
             <ProfileAvatar title={updatedTitle} />
           ) : (
-            <CustomIcon title={updatedTitle} />
+            <CustomIcon title={title} />
           )}
           <div>{updatedTitle}</div>
           <div className="ColumnLength">{data?.length}</div>

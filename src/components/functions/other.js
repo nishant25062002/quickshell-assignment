@@ -1,11 +1,11 @@
 export const idToName = (title, data, grouping) => {
   if (grouping === "priority") {
     const priorityMap = {
-      4: "Urgent",
-      3: "High",
-      2: "Medium",
-      1: "Low",
-      0: "No priority",
+      4: "Urgent Priority",
+      3: "High Priority",
+      2: "Medium Priority",
+      1: "Low Priority",
+      0: "No Priority",
     };
     return priorityMap[title] || "Unknown Priority";
   }
