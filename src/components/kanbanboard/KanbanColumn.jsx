@@ -8,16 +8,28 @@ import { useSelector } from "react-redux";
 import { idToName } from "../functions/other";
 import { ticketsAndUsers } from "../../redux/selector/ticketSelector";
 import { filterGrouping } from "../../redux/selector/filterSelector";
+import { useDrop } from "react-dnd";
 
-const KanbanColumn = ({ data, title }) => {
+const KanbanColumn = ({ data, title, moveTicket }) => {
   const grouping = useSelector(filterGrouping);
-
   const allData = useSelector(ticketsAndUsers);
 
   const updatedTitle = idToName(title, allData, grouping);
 
+  const [{ isOver }, drop] = useDrop({
+    accept: "TICKET",
+    drop: (item) => moveTicket(item.id, title),
+    collect: (monitor) => ({
+      isOver: !!monitor.isOver(),
+    }),
+  });
+
   return (
-    <div className="Column">
+    <div
+      className="Column"
+      ref={drop}
+      style={{ backgroundColor: isOver ? "#fafcff" : "transparent" }}
+    >
       <div className="ColumnHeader">
         <div className="HeaderDetails">
           {grouping === "users" ? (
