@@ -13,16 +13,18 @@ const KanbanColumn = ({ data, title }) => {
   const grouping = useSelector(filterGrouping);
   const allData = useSelector(ticketsAndUsers);
 
+  const updatedTitle = idToName(title, allData, grouping);
+
   return (
     <div className="Column">
       <div className="ColumnHeader">
         <div className="HeaderDetails">
           {grouping === "users" ? (
-            <ProfileAvatar title={title} />
+            <ProfileAvatar title={updatedTitle} />
           ) : (
-            <CustomIcon title={title} />
+            <CustomIcon title={updatedTitle} />
           )}
-          <div>{idToName(title, allData, grouping)}</div>
+          <div>{updatedTitle}</div>
           <div className="ColumnLength">{data?.length}</div>
         </div>
         <div className="HeaderIcons">
@@ -33,7 +35,9 @@ const KanbanColumn = ({ data, title }) => {
 
       <div className="ColumnTicket">
         {data?.length > 0 &&
-          data.map((ticket, index) => <TicketCard key={index} {...ticket} />)}
+          data.map((ticket, index) => (
+            <TicketCard key={index} ticket={ticket} />
+          ))}
       </div>
     </div>
   );

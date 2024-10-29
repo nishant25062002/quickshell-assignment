@@ -17,7 +17,7 @@ export const groupTickets = (grouping, ordering, data) => {
       groupedData[key] = [];
     }
 
-    groupedData[key].push({ ...ticket, user });
+    groupedData[key].push({ ...ticket, name: user?.name });
   });
 
   const groupedArray = Object.keys(groupedData).map((key) => ({

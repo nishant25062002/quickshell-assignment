@@ -1,27 +1,34 @@
 import React from "react";
-import BackLogIcon from "../../assets/Backlog.svg";
-import PriorityIcon from "../../assets/Img - High Priority.svg";
 import ProfileAvatar from "../global/Icon/ProfileAvatar";
+import CustomIcon from "../global/Icon/CustomIcon";
+import { useSelector } from "react-redux";
+import { filterGrouping } from "../../redux/selector/filterSelector";
 
-const TicketCard = ({ id, title, user, tag }) => {
+const TicketCard = ({ ticket }) => {
+  const grouping = useSelector(filterGrouping);
+
   return (
     <div className="TicketCard">
       <div className="CardTop">
-        {id}
-        <ProfileAvatar title={user.name} />
+        {ticket?.id}
+        <ProfileAvatar title={ticket?.name} />
       </div>
       <div className="CardDetails">
-        <img src={BackLogIcon} alt="icon" />
-        <div>{title}</div>
+        {grouping !== "status" && (
+          <CustomIcon title={ticket?.status.toString()} />
+        )}
+        <div>{ticket?.title}</div>
       </div>
 
       <div className="CardBottom">
-        <div className="BorderDiv">
-          <img src={PriorityIcon} alt="pic" />
-        </div>
+        {grouping !== "priority" && (
+          <div className="BorderDiv">
+            <CustomIcon title={ticket?.priority.toString()} />
+          </div>
+        )}
 
-        {tag?.length > 0 &&
-          tag.map((eachTag, index) => (
+        {ticket?.tag?.length > 0 &&
+          ticket?.tag.map((eachTag, index) => (
             <div className="BorderDiv" key={index}>
               <div className="Dot" />
               <div>{eachTag}</div>

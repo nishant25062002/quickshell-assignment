@@ -17,7 +17,7 @@ const getColorFromTitle = (title) => {
   return color;
 };
 
-const ProfileAvatar = ({ title, active = false }) => {
+const ProfileAvatar = ({ title = "", active = false }) => {
   const initials = getInitials(title);
   const backgroundColor = getColorFromTitle(title);
 
