@@ -1,6 +1,6 @@
 # Interactive Kanban Board Application
 
-This is an interactive Kanban board application built using React JS. The application interacts with the provided API to display tickets that can be grouped and sorted based on user preferences.
+This is an interactive Kanban board application built using React JS. The application interacts with the provided API to display tickets that can be grouped and sorted based on user preferences. I have stored the user changes in local storage so that state persists on page reload. Also User can drag and drop the ticket from one column to another.
 
 ## Live Demo
 
