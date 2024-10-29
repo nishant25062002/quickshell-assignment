@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+# Interactive Kanban Board Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is an interactive Kanban board application built using React JS. The application interacts with the provided API to display tickets that can be grouped and sorted based on user preferences.
 
-## Available Scripts
+## Live Demo
 
-In the project directory, you can run:
+[Link to the hosted website](https://quickshell-assignment-iota.vercel.app/)
 
-### `npm start`
+## Table of Contents
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Grouping and Sorting](#grouping-and-sorting)
+- [Design](#design)
+- [Technologies Used](#technologies-used)
+- [License](#license)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+- Fetches data from the provided API.
+- Users can group tickets by:
+  - Status
+  - User
+  - Priority
+- Users can sort tickets by:
+  - Priority (descending)
+  - Title (ascending)
+- Responsive and visually appealing design.
+- User's view state is preserved even after page reload.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+To run the project locally, follow these steps:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/nishant25062002/quickshell-assignment.git
+   ```
+2. Navigate to the project directory:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   cd quickshell-assignment
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Start the development server:
 
-### `npm run eject`
+   npm install
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. Start the development server:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   npm start
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+5. Open your browser and navigate to http://localhost:3000
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Usage
 
-## Learn More
+1. Click the "Display" button to filter the Kanban board.
+2. Select a grouping option (Status, User, or Priority) to adjust the board dynamically.
+3. Use the sorting options to arrange tickets as desired.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Grouping and Sorting
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Grouping Options
 
-### Code Splitting
+1.  By Status: Groups tickets based on their current status, allowing users to quickly identify the state of each ticket.
+2.  By User: Arranges tickets according to the assigned user, making it easier to manage workloads.
+3.  By Priority: Groups tickets based on their priority level, helping users focus on the most important tasks first.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Sorting Options
 
-### Analyzing the Bundle Size
+1.  Priority: Sorts tickets in descending order of priority, ensuring that urgent tasks are always at the top.
+2.  Title: Sorts tickets in ascending order based on their title, providing a straightforward alphabetical organization.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Design
 
-### Making a Progressive Web App
+The application design closely matches the provided screenshots, ensuring an intuitive and user-friendly interface. All styling is done using pure CSS, adhering to the specified design guidelines. Careful attention has been paid to ensure that the layout is responsive and visually appealing.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Technologies Used
 
-### Advanced Configuration
+React JS: For building the user interface and managing application state.
+Pure CSS: For styling the application without using any CSS libraries.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Installation
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Made by Nishant Mainwal 💖
