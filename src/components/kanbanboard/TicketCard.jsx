@@ -3,12 +3,28 @@ import ProfileAvatar from "../global/Icon/ProfileAvatar";
 import CustomIcon from "../global/Icon/CustomIcon";
 import { filterGrouping } from "../../redux/selector/filterSelector";
 import { useSelector } from "react-redux";
+import { useDrag } from "react-dnd";
 
 const TicketCard = ({ ticket }) => {
   const grouping = useSelector(filterGrouping);
 
+  const [{ isDragging }, drag] = useDrag({
+    type: "TICKET",
+    item: { id: ticket.id },
+    collect: (monitor) => ({
+      isDragging: !!monitor.isDragging(),
+    }),
+  });
+
   return (
-    <div className="TicketCard">
+    <div
+      className="TicketCard"
+      ref={drag}
+      style={{
+        opacity: isDragging ? 0.5 : 1,
+        cursor: "move",
+      }}
+    >
       <div className="CardTop">
         {ticket?.id}
         <ProfileAvatar title={ticket?.name} />

@@ -11,9 +11,15 @@ function App() {
   useEffect(() => {
     (async () => {
       try {
-        const res = await getTicketsAndUsers();
-        console.log(res);
-        dispatch(SetTicketsAndUsers(res.data));
+        const localData = localStorage.getItem("ticketsAndUsers");
+
+        if (localData) {
+          dispatch(SetTicketsAndUsers(JSON.parse(localData)));
+        } else {
+          const res = await getTicketsAndUsers();
+          localStorage.setItem("ticketsAndUsers", JSON.stringify(res.data));
+          dispatch(SetTicketsAndUsers(res.data));
+        }
       } catch (error) {
         console.error(error);
       } finally {

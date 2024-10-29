@@ -21,7 +21,6 @@ export const groupTickets = (grouping, ordering, data) => {
   data?.tickets?.forEach((ticket) => {
     let key;
     const user = data?.users?.find((user) => user.id === ticket.userId);
-    // let dataKeys = ["4", "3", "2", "1", "0"];
 
     if (grouping === "priority") {
       key = ticket.priority;
