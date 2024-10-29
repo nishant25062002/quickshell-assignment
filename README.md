@@ -79,6 +79,6 @@ The application design closely matches the provided screenshots, ensuring an int
 React JS: For building the user interface and managing application state.
 Pure CSS: For styling the application without using any CSS libraries.
 
-## Installation
+## License
 
 Made by Nishant Mainwal 💖
