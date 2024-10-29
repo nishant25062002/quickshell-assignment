@@ -30,8 +30,6 @@ const KanbanBoard = () => {
       if (column?.data?.some((ticket) => ticket.id === ticketId)) {
         ticketToMove = column.data.find((ticket) => ticket.id === ticketId);
 
-        console.log("ticketToMove1", ticketToMove, grouping, targetColumnId);
-
         if (grouping === USERS) {
           const user = data?.users?.find((user) => user.id === targetColumnId);
           ticketToMove.name = user?.name;
