@@ -1,5 +1,7 @@
+import { PRIORITY, USERS } from "../../utils/cons";
+
 export const idToName = (title, data, grouping) => {
-  if (grouping === "priority") {
+  if (grouping === PRIORITY) {
     const priorityMap = {
       4: "Urgent Priority",
       3: "High Priority",
@@ -10,7 +12,7 @@ export const idToName = (title, data, grouping) => {
     return priorityMap[title] || "Unknown Priority";
   }
 
-  if (grouping === "users") {
+  if (grouping === USERS) {
     const user = data?.users?.find((user) => user.id === title);
     return user ? user.name : "Unknown User";
   }

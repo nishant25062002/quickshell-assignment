@@ -4,6 +4,7 @@ import CustomIcon from "../global/Icon/CustomIcon";
 import { filterGrouping } from "../../redux/selector/filterSelector";
 import { useSelector } from "react-redux";
 import { useDrag } from "react-dnd";
+import { PRIORITY, STATUS } from "../../utils/cons";
 
 const TicketCard = ({ ticket }) => {
   const grouping = useSelector(filterGrouping);
@@ -30,14 +31,14 @@ const TicketCard = ({ ticket }) => {
         <ProfileAvatar title={ticket?.name} />
       </div>
       <div className="CardDetails">
-        {grouping !== "status" && (
+        {grouping !== STATUS && (
           <CustomIcon title={ticket?.status.toString()} />
         )}
         <div>{ticket?.title}</div>
       </div>
 
       <div className="CardBottom">
-        {grouping !== "priority" && (
+        {grouping !== PRIORITY && (
           <div className="BorderDiv">
             <CustomIcon title={ticket?.priority.toString()} />
           </div>

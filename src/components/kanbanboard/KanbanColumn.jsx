@@ -9,6 +9,7 @@ import { idToName } from "../functions/other";
 import { ticketsAndUsers } from "../../redux/selector/ticketSelector";
 import { filterGrouping } from "../../redux/selector/filterSelector";
 import { useDrop } from "react-dnd";
+import { USERS } from "../../utils/cons";
 
 const KanbanColumn = ({ data, title, moveTicket }) => {
   const grouping = useSelector(filterGrouping);
@@ -32,7 +33,7 @@ const KanbanColumn = ({ data, title, moveTicket }) => {
     >
       <div className="ColumnHeader">
         <div className="HeaderDetails">
-          {grouping === "users" ? (
+          {grouping === USERS ? (
             <ProfileAvatar title={updatedTitle} />
           ) : (
             <CustomIcon title={title} />

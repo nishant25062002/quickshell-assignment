@@ -1,6 +1,8 @@
+import { PRIORITY, STATUS, USERS } from "../../utils/cons";
+
 export const groupTickets = (grouping, ordering, data) => {
   const groupedData =
-    grouping === "priority"
+    grouping === PRIORITY
       ? {
           4: [],
           3: [],
@@ -8,7 +10,7 @@ export const groupTickets = (grouping, ordering, data) => {
           1: [],
           0: [],
         }
-      : grouping === "status"
+      : grouping === STATUS
       ? {
           Todo: [],
           "In progress": [],
@@ -22,11 +24,11 @@ export const groupTickets = (grouping, ordering, data) => {
     let key;
     const user = data?.users?.find((user) => user.id === ticket.userId);
 
-    if (grouping === "priority") {
+    if (grouping === PRIORITY) {
       key = ticket.priority;
-    } else if (grouping === "status") {
+    } else if (grouping === STATUS) {
       key = ticket.status;
-    } else if (grouping === "users") {
+    } else if (grouping === USERS) {
       key = user ? user.id : "Unknown";
     }
 
@@ -47,7 +49,7 @@ export const groupTickets = (grouping, ordering, data) => {
       group.data.sort((a, b) => {
         if (ordering === "title") {
           return a.title.localeCompare(b.title);
-        } else if (ordering === "priority") {
+        } else if (ordering === PRIORITY) {
           return b[ordering] - a[ordering];
         } else {
           return a[ordering] - b[ordering];

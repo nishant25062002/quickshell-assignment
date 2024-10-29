@@ -8,6 +8,7 @@ import {
   filterGrouping,
   filterOrdering,
 } from "../../redux/selector/filterSelector";
+import { GroupOptions, OrderOptions } from "../../utils/cons";
 
 const DisplayDialog = ({ setShowDialog }) => {
   const ref = useRef(null);
@@ -33,20 +34,13 @@ const DisplayDialog = ({ setShowDialog }) => {
   const options = [
     {
       title: "Grouping",
-      options: [
-        { label: "Status", value: "status" },
-        { label: "Priority", value: "priority" },
-        { label: "User", value: "users" },
-      ],
+      options: GroupOptions,
       onSelect: (val) => handleGrouping("grouping", val),
       value: grouping,
     },
     {
       title: "Ordering",
-      options: [
-        { label: "Priority", value: "priority" },
-        { label: "Title", value: "title" },
-      ],
+      options: OrderOptions,
       onSelect: (val) => handleGrouping("ordering", val),
       value: ordering,
     },

@@ -9,6 +9,7 @@ import {
   filterOrdering,
 } from "../../redux/selector/filterSelector";
 import { SetTicketsAndUsers } from "../../redux/reducer/ticketReducer";
+import { PRIORITY, STATUS, USERS } from "../../utils/cons";
 
 const KanbanBoard = () => {
   const dispatch = useDispatch();
@@ -31,18 +32,15 @@ const KanbanBoard = () => {
 
         console.log("ticketToMove1", ticketToMove, grouping, targetColumnId);
 
-        // Update ticket properties based on the grouping
-        if (grouping === "users") {
+        if (grouping === USERS) {
           const user = data?.users?.find((user) => user.id === targetColumnId);
           ticketToMove.name = user?.name;
           ticketToMove.userId = targetColumnId;
-        } else if (grouping === "status") {
+        } else if (grouping === STATUS) {
           ticketToMove.status = targetColumnId;
-        } else if (grouping === "priority") {
+        } else if (grouping === PRIORITY) {
           ticketToMove.priority = targetColumnId;
         }
-
-        console.log("ticketToMove2", ticketToMove);
 
         return {
           ...column,

@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { PRIORITY, STATUS } from "../../utils/cons";
 
 const initialState = {
-  grouping: "status",
-  ordering: "priority",
+  grouping: STATUS,
+  ordering: PRIORITY,
 };
 
 const filterSlice = createSlice({
