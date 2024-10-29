@@ -1,10 +1,9 @@
 import { useEffect } from "react";
-import Header from "./components/header/Header";
-import KanbanBoard from "./components/kanbanboard/KanbanBoard";
 import { getTicketsAndUsers } from "./api/ticketsAndUsers";
 import { useDispatch } from "react-redux";
 import { SetTicketsAndUsers } from "./redux/reducer/ticketReducer";
 import { BrowserRouter as Router } from "react-router-dom";
+import Home from "./components/pages/Home";
 
 function App() {
   const dispatch = useDispatch();
@@ -25,10 +24,7 @@ function App() {
 
   return (
     <Router>
-      <div>
-        <Header />
-        <KanbanBoard />
-      </div>
+      <Home />
     </Router>
   );
 }

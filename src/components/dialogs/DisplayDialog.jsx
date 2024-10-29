@@ -2,20 +2,31 @@ import React, { useCallback, useEffect, useRef } from "react";
 import Dropdown from "../dropdown/Dropdown";
 import "./Dialog.css";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { SetGrouping, SetOrdering } from "../../redux/reducer/filterReducer";
+import {
+  filterGrouping,
+  filterOrdering,
+} from "../../redux/selector/filterSelector";
 
 const DisplayDialog = ({ setShowDialog }) => {
   const ref = useRef(null);
   const navigate = useNavigate();
   const location = useLocation();
-
-  const searchParams = new URLSearchParams(location.search);
-  const grouping = searchParams.get("grouping");
-  const ordering = searchParams.get("ordering");
+  const dispatch = useDispatch();
+  const grouping = useSelector(filterGrouping);
+  const ordering = useSelector(filterOrdering);
 
   const handleGrouping = (type, val) => {
     const searchParams = new URLSearchParams(location.search);
     searchParams.set(type, val);
     navigate(`/?${searchParams.toString()}`);
+
+    if (type === "grouping") {
+      dispatch(SetGrouping(searchParams.get("grouping")));
+    } else {
+      dispatch(SetOrdering(searchParams.get("ordering")));
+    }
   };
 
   const options = [

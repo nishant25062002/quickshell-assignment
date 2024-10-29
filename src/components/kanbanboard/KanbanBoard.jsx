@@ -4,13 +4,14 @@ import KanbanColumn from "./KanbanColumn";
 import { useSelector } from "react-redux";
 import { ticketsAndUsers } from "../../redux/selector/ticketSelector";
 import { groupTickets } from "../functions/filter";
-import { useLocation } from "react-router-dom";
+import {
+  filterGrouping,
+  filterOrdering,
+} from "../../redux/selector/filterSelector";
 
 const KanbanBoard = () => {
-  const location = useLocation();
-  const searchParams = new URLSearchParams(location.search);
-  const grouping = searchParams.get("grouping");
-  const ordering = searchParams.get("ordering");
+  const grouping = useSelector(filterGrouping);
+  const ordering = useSelector(filterOrdering);
 
   const data = useSelector(ticketsAndUsers);
 

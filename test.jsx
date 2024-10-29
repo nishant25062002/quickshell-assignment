@@ -30,3 +30,7 @@ quickshell-assignment/
 │   ├── index.js                  # Main entry point
 │   └── setupTests.js             # Test setup file for Jest or React Testing Library
 └── package.json
+
+
+const grouping = useSelector(filterGrouping);
+const ordering = useSelector(filterOrdering);

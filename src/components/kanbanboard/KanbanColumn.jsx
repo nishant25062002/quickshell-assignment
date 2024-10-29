@@ -7,12 +7,10 @@ import ProfileAvatar from "../global/Icon/ProfileAvatar";
 import { useSelector } from "react-redux";
 import { idToName } from "../functions/other";
 import { ticketsAndUsers } from "../../redux/selector/ticketSelector";
-import { useLocation } from "react-router-dom";
+import { filterGrouping } from "../../redux/selector/filterSelector";
 
 const KanbanColumn = ({ data, title }) => {
-  const location = useLocation();
-  const searchParams = new URLSearchParams(location.search);
-  const grouping = searchParams.get("grouping");
+  const grouping = useSelector(filterGrouping);
 
   const allData = useSelector(ticketsAndUsers);
 
