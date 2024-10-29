@@ -1,9 +1,27 @@
 export const groupTickets = (grouping, ordering, data) => {
-  const groupedData = {};
+  const groupedData =
+    grouping === "priority"
+      ? {
+          4: [],
+          3: [],
+          2: [],
+          1: [],
+          0: [],
+        }
+      : grouping === "status"
+      ? {
+          Todo: [],
+          "In progress": [],
+          Backlog: [],
+          Done: [],
+          Cancelled: [],
+        }
+      : {};
 
   data?.tickets?.forEach((ticket) => {
     let key;
     const user = data?.users?.find((user) => user.id === ticket.userId);
+    // let dataKeys = ["4", "3", "2", "1", "0"];
 
     if (grouping === "priority") {
       key = ticket.priority;
@@ -30,6 +48,8 @@ export const groupTickets = (grouping, ordering, data) => {
       group.data.sort((a, b) => {
         if (ordering === "title") {
           return a.title.localeCompare(b.title);
+        } else if (ordering === "priority") {
+          return b[ordering] - a[ordering];
         } else {
           return a[ordering] - b[ordering];
         }

@@ -1,11 +1,12 @@
 import React from "react";
 import ProfileAvatar from "../global/Icon/ProfileAvatar";
 import CustomIcon from "../global/Icon/CustomIcon";
-import { useSelector } from "react-redux";
-import { filterGrouping } from "../../redux/selector/filterSelector";
+import { useLocation } from "react-router-dom";
 
 const TicketCard = ({ ticket }) => {
-  const grouping = useSelector(filterGrouping);
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const grouping = searchParams.get("grouping");
 
   return (
     <div className="TicketCard">

@@ -5,12 +5,15 @@ import TicketCard from "./TicketCard";
 import CustomIcon from "../global/Icon/CustomIcon";
 import ProfileAvatar from "../global/Icon/ProfileAvatar";
 import { useSelector } from "react-redux";
-import { filterGrouping } from "../../redux/selector/filterSelector";
 import { idToName } from "../functions/other";
 import { ticketsAndUsers } from "../../redux/selector/ticketSelector";
+import { useLocation } from "react-router-dom";
 
 const KanbanColumn = ({ data, title }) => {
-  const grouping = useSelector(filterGrouping);
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const grouping = searchParams.get("grouping");
+
   const allData = useSelector(ticketsAndUsers);
 
   const updatedTitle = idToName(title, allData, grouping);

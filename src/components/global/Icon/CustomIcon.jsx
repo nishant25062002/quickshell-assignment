@@ -36,7 +36,7 @@ const CustomIcon = ({ title = "" }) => {
     icon = BackLogIcon;
   } else if (title?.toLowerCase().includes("in progress")) {
     icon = InProgressIcon;
-  } else if (title?.toLowerCase().includes("canceled")) {
+  } else if (title?.toLowerCase().includes("cancelled")) {
     icon = CancelledIcon;
   } else if (title?.toLowerCase().includes("urgent")) {
     icon = UrgentGreyIcon;

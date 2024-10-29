@@ -4,6 +4,8 @@ import KanbanBoard from "./components/kanbanboard/KanbanBoard";
 import { getTicketsAndUsers } from "./api/ticketsAndUsers";
 import { useDispatch } from "react-redux";
 import { SetTicketsAndUsers } from "./redux/reducer/ticketReducer";
+import { BrowserRouter as Router } from "react-router-dom";
+
 function App() {
   const dispatch = useDispatch();
 
@@ -22,10 +24,12 @@ function App() {
   }, []);
 
   return (
-    <div>
-      <Header />
-      <KanbanBoard />
-    </div>
+    <Router>
+      <div>
+        <Header />
+        <KanbanBoard />
+      </div>
+    </Router>
   );
 }
 

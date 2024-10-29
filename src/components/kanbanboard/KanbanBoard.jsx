@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react";
 import "./KanbanBoard.css";
 import KanbanColumn from "./KanbanColumn";
-import {
-  filterGrouping,
-  filterOrdering,
-} from "../../redux/selector/filterSelector";
 import { useSelector } from "react-redux";
 import { ticketsAndUsers } from "../../redux/selector/ticketSelector";
 import { groupTickets } from "../functions/filter";
+import { useLocation } from "react-router-dom";
 
 const KanbanBoard = () => {
-  const grouping = useSelector(filterGrouping);
-  const ordering = useSelector(filterOrdering);
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const grouping = searchParams.get("grouping");
+  const ordering = searchParams.get("ordering");
+
   const data = useSelector(ticketsAndUsers);
 
   const [groupedData, setGroupedData] = useState(null);
